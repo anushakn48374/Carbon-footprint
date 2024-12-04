@@ -9,7 +9,7 @@ import io
 app = Flask(__name__)
 
 # Replace with your Anthropic API key
-api_key = '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'
+api_key = ''
 anthropic = Anthropic(api_key=api_key)
 
 # Function to extract text from the image using PyTesseract
