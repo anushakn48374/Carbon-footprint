@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <div class="row"> 
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">  
+ <i class="fas fa-chevron-left"></i>
+      <span>
+<ul class="breadcrumb mt-2" routerLink="/form">
+  <li>
+    <img src="../../assets/back.png" class="img" (click)="back()"> 
+    LeaderBoard  {{totalLeadPoints}}
+  </li>
+</ul>
+
+<!-- Tabs Section -->
+<style>
+        /* Style for the tabs */
+        .tab {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .tab button {
+            background-color: #f1f1f1;
+            border: none;
+            padding: 10px 50px;
+            margin: 0;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        .tab button.active {
+            background-color: blue;
+            font-weight: bold;
+        }
+
+        .tab button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Style for the tab content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+
+
+
+
+
+<div class="tab">
+    <button class="tablink" (click)="board() " active>All</button>
+    <button class="tablink" (click)="board()">Monthly</button>
+    <button class="tablink"(click)="boardWeekly()" >Weekly</button>
+</div>
+   
+
+<div class="row leaderboard-row">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-4 leaderboard-title ps-5">
+    <h5 class="leaderboard-name fw-bold text-end ms-4">Name</h5>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-end leaderboard-title">
+    <h5 class="leaderboard-rank fw-bold">Rank</h5>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-4 text-center leaderboard-title">
+    <h5 class="leaderboard-carbon fw-bold">Reduced Emission</h5>
+  </div>
+</div>
+
+<div *ngFor="let user of leaderBoardData; let i = index" class="row align-items-center mt-3 "
+[ngClass]="{'highlighted-user': user.user_name === username}">
+
+  <div class="col-lg-1 col-md-2 col-sm-2 col-2 text-center" >
+    <img [src]="user.profileImage" alt="Profile Image" class="img-fluid rounded-circle" width="50" height="50">
+  </div>
+ 
+  <!-- Name Column -->
+  <div class="col-lg-3 col-md-3 col-sm-3 col-4 d-flex align-items-centre ">
+    <h6 class="mb-0">{{ user.user_name }}</h6>
+  </div>
+ 
+  <!-- Rank Column -->
+  <div class="col-lg-4 col-md-4 col-sm-4 col-3 text-left">
+    <h6 class="mb-0">{{ i + 1 }}</h6> <!-- Display rank (1-indexed) -->
+  </div>
+ 
+  <!-- Carbon Emission Column -->
+  <div class="col-lg-4 col-md-4 col-sm-4 col-3 text-left" >
+      
+    <h6 class="mb-0">{{ ( user.lead_points).toFixed(2)}} gCo2</h6> <!-- Display carbon emission -->
+  </div>
+</div>
+  

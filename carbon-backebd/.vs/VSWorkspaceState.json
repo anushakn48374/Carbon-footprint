@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\com",
+    "\\src\\main\\java\\com\\texplore",
+    "\\src\\main\\java\\com\\texplore\\carbonemissiontracker",
+    "\\src\\main\\java\\com\\texplore\\carbonemissiontracker\\dto",
+    "\\src\\main\\java\\com\\texplore\\carbonemissiontracker\\helper",
+    "\\src\\main\\java\\com\\texplore\\carbonemissiontracker\\service",
+    "\\src\\main\\resources"
+  ],
+  "PreviewInSolutionExplorer": false
+}
